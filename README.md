@@ -2,11 +2,13 @@
 
 A repository deticated to the exploration and application of Monte Carlo and similar topics. Applications include computing, mathematics, phsics, and finance. 
 
-## Monte Carlo Stock Simulation
+## Monte Carlo Stock Simulation (Project 1)
 
 This project looks at historical stock prices from Apple (AAPL) over the past year to run Geometric Brownian Motion Monte-Carlo for N paths. This allows us to develop a distribution of potential future prices of a given stock for reasons like risk analysis. 
 
 In the future, I'd like to expand upon this and have a bot make real-time decisions. A way this could work is going back 2 years and running monte carlo for 1 and test the bot on the next year.
+
+The formula for GBM:
 
 $$
 S_t = S_0 \exp \left( \left( \mu - \frac{\sigma^2}{2} \right) t + \sigma W_t \right)
@@ -53,7 +55,7 @@ From the image above, you can see that the distribution of the final prices of A
 
 
 
-## PI Estimation 
+## PI Estimation (Project 2)
 
 I implemented this to get a good understanding of how Monte Carlo works in a base sense and how it can be done in CUDA. I added a triton version to analyze the error as the number of trials increased. I also wanted to compare CUDA vs Triton in terms of accuracy. 
 
