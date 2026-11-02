@@ -9,6 +9,7 @@ S0 = df.iloc[:, 0].mean()
 final = df.iloc[:, -1]
 
 def var(stocks, S0, final): 
+    final = final.sort_values()
     final *= stocks
     final -= (S0 * stocks)
     idx95 = int(len(final) * (1 - .95))
@@ -38,17 +39,15 @@ def bell(stock, S0, df):
     plt.xlabel("Portfolio Profit / Loss")
     plt.ylabel("Frequency of Trials")
 
-    plt.savefig('conditional_histogram.png', bbox_inches='tight')
-    print("Plot successfully saved to 'conditional_histogram.png'!")    
+    plt.savefig('aapl_hist.png', bbox_inches='tight')
+    print("Plot successfully saved to 'aapl_hist.png'!")    
 
 def project(df):
     sub = df.sample(1000, random_state=0)
 
-    df_transposed = sub.T
-
-    sns.lineplot(data=df_transposed, dashes=False, legend=False, palette="dark")
+    sns.lineplot(data=sub, dashes=False, legend=False, palette="dark")
     step = 30 
-    ticks = range(0, len(df_transposed.index), step)
+    ticks = range(0, len(sub.index), step)
     labels = [i for i in ticks]
     plt.xticks(ticks=ticks, labels=labels, rotation=45) 
 
@@ -56,4 +55,6 @@ def project(df):
     plt.xlabel("Day")
     plt.ylabel("Price")
     plt.grid(True, alpha=0.3)
-    plt.savefig('my_line_plot.png', dpi=300, bbox_inches='tight')
+    plt.savefig('aapl.png', dpi=300, bbox_inches='tight')
+
+var(200, S0, final)
