@@ -90,3 +90,5 @@ Results:
 - Error: 0.00028%
 
 While Triton is excellent for experimentation and deploying models such as LLMs, it did seem to lag behind raw CUDA in terms of performance and accuracy as CUDA was over 6x faster. Though this comparison isn't entirely fair as Triton executes in a slightly more sequential manner thats optimized for different workloads as stated earlier.
+
+<Figure size 640x480 with 1 Axes>
