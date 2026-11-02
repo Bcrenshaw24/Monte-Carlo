@@ -8,6 +8,8 @@ This project looks at historical stock prices from Apple (AAPL) over the past ye
 
 In the future, I'd like to expand upon this and have a bot make real-time decisions. A way this could work is going back 2 years and running monte carlo for 1 and test the bot on the next year.
 
+The formula for GBM:
+
 $$
 S_t = S_0 \exp \left( \left( \mu - \frac{\sigma^2}{2} \right) t + \sigma W_t \right)
 $$
